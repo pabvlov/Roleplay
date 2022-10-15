@@ -1,0 +1,22 @@
+{
+	"user": "pabvlov",
+	"repo": "creativeroleplay",
+	"entry": "creative.pwn",
+	"output": "./gamemodes/creative.amx",
+	"dependencies": [
+		"pawn-lang/samp-stdlib",
+		"YSI-Coding/y_hooks",
+		"pBlueG/SA-MP-MySQL:R41-4"
+	],
+	"local": true,
+	"runtime": {
+		"version": "0.3.7",
+		"mode": "server",
+		"rcon_password": "password",
+		"port": 7777,
+		"hostname": "Creative Roleplay",
+		"maxplayers": 50,
+		"language": "",
+		"plugins": ["plugins/mysql"]
+	}
+}
