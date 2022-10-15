@@ -1,6 +1,6 @@
 {
 	"user": "pabvlov",
-	"repo": "creativeroleplay",
+	"repo": "Roleplay",
 	"entry": "creative.pwn",
 	"output": "./gamemodes/creative.amx",
 	"dependencies": [
