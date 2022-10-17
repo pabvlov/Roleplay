@@ -20,6 +20,7 @@ new ver[24] = "BETA 0.0.1"; /* Versión */
 // Modules
 
 #include <../modules/login.pwn>
+#include <../modules/factions/main.pwn>
 
 
 enum E_PLAYER
@@ -28,7 +29,9 @@ enum E_PLAYER
 	Name[MAX_PLAYER_NAME]
 };
 new Players[MAX_PLAYERS][E_PLAYER];
-
+#if !defined isnull
+    #define isnull(%1) ((!(%1[0])) || (((%1[0]) == '\1') && (!(%1[1]))))
+#endif
 
 
 main() 
@@ -65,7 +68,9 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 
 YCMD:me(playerid,params[], help)
 {
-    SendClientMessageInRange(playerid, "Test cmd called and its working ?");
+	if(isnull(text)) {
+        SendClientMessage(playerid, 0xFFFFFFFF, "[!] USO -> /me texto");
+    } else SendClientMessageInRange(playerid, params, "/me", 30);
     return 1;
 }
 
