@@ -3,9 +3,6 @@
 [![sampctl](https://img.shields.io/badge/sampctl-creative-2f2f2f.svg?style=for-the-badge)](https://github.com/pabvlov/creative)
 
 <!--
-Short description of your library, why it's useful, some examples, pictures or
-videos. Link to your forum release thread too.
-
 Remember: You can use "forumfmt" to convert this readme to forum BBCode!
 
 What the sections below should be used for:
@@ -25,6 +22,7 @@ And finally, maintaining your version number`:
 
 Happy Pawning!
 -->
+This is a Roleplay Gamemode made from scratch just for fun, maybe we could make something big!
 
 ## Installation
 
@@ -34,20 +32,11 @@ Simply install to your project:
 sampctl package install pabvlov/creative
 ```
 
-Include in your code and begin using the library:
+For build
 
-```pawn
-#include <creative>
+```bash
+sampctl p build
 ```
-
-## Usage
-
-<!--
-Write your code documentation or examples here. If your library is documented in
-the source code, direct users there. If not, list your API and describe it well
-in this section. If your library is passive and has no API, simply omit this
-section.
--->
 
 ## Testing
 
