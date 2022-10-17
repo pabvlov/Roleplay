@@ -68,8 +68,8 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 
 YCMD:me(playerid,params[], help)
 {
-	if(isnull(text)) {
-        SendClientMessage(playerid, 0xFFFFFFFF, "[!] USO -> /me texto");
+	if(isnull(params)) {
+        SendClientMessage(playerid, 0xFFFFFFFF, "[!] USO -> /me texto uwu");
     } else SendClientMessageInRange(playerid, params, "/me", 30);
     return 1;
 }
