@@ -50,7 +50,8 @@ public OnGameModeInit() {
 	SendRconCommand("language ES");
 	ConnectMySQL(); // called in './modules/login.pwn'
 	AddStaticVehicleEx (411, 1774.4281,-1860.3768,13.2201,269.7705, -1, -1, 15); // infernus at start
-	
+	AddStaticVehicleEx (470, 1791.9729,-1860.7401,13.2197,269.3767, -1, -1, 15); // infernus at start
+    AddStaticVehicleEx (510, 1791.9729,-1860.7401,20.2197,269.3767, -1, -1, 15); // infernus at start
 }
 
 public OnPlayerStateChange(playerid, newstate, oldstate)
@@ -66,11 +67,30 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
     return 1;
 }
 
-YCMD:me(playerid,params[], help)
+YCMD:me(playerid, params[], help)
 {
 	if(isnull(params)) {
-        SendClientMessage(playerid, 0xFFFFFFFF, "[!] USO -> /me texto uwu");
-    } else SendClientMessageInRange(playerid, params, "/me", 30);
+        SendClientMessage(playerid, 0xFFFFFFFF, "[!] USO -> /me accion.");
+    } else {
+        new msg[128], name[24];
+        GetPlayerName(playerid, name, sizeof(name));
+        format(msg, sizeof(msg), "%s %s", name, params);
+        SendClientMessageInRange(playerid, msg, "/me", 30.0);
+    }
     return 1;
 }
+
+YCMD:do(playerid, params[], help)
+{
+	if(isnull(params)) {
+        SendClientMessage(playerid, 0xFFFFFFFF, "[!] USO -> /do entorno.");
+    } else {
+        new msg[128], name[24];
+        GetPlayerName(playerid, name, sizeof(name));
+        format(msg, sizeof(msg), "[Entorno de %s] %s", name, params);
+        SendClientMessageInRange(playerid, msg, "/do", 30.0);
+    }
+    return 1;
+}
+
 
