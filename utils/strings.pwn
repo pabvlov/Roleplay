@@ -1,29 +1,29 @@
-forward SendClientMessageInRange(playerid, const text[], const color[], const radius);
-public SendClientMessageInRange(playerid, const text[], const color[], const radius) 
+forward SendClientMessageInRange(playerid, const text[], const color[], const Float:radius);
+public SendClientMessageInRange(playerid, const text[], const color[], const Float:radius) 
 {
-    
     new 
         Float:x, 
         Float:y, 
-        Float:z,
-        msg[144], 
-        name[24];
+        Float:z;
 
     GetPlayerPos(playerid, x, y, z);
-    GetPlayerName(playerid, name, sizeof(name));
 
-    for(new i = 0; i < MAX_PLAYERS; i++) {
-        new Float: pDistanceFromPoint;
-        pDistanceFromPoint = GetPlayerDistanceFromPoint(i, x, y, z);
+    for(new i = 0; i < GetMaxPlayers(); i++) {
+        if(!IsPlayerConnected(i)) break;
+        new msg2[128], nombre[24];
+        GetPlayerName(i, nombre, 24);
+        format(msg2, sizeof(msg2), "radius: %f, pDistanceFromPoint: %f, i: %d, nombre: %s, jugadores: %d",  radius, GetPlayerDistanceFromPoint(i, x, y, z), i, nombre, GetMaxPlayers());
+        print(msg2);
         if (IsPlayerInRangeOfPoint(i, radius, x, y, z))
         {
-            format(msg, sizeof(msg), "%s %s", name, text);
-            if (pDistanceFromPoint <= 30.0) 
-            { 
-                SendClientMessage(playerid, 0xC2A2DAAA, msg); 
-                break;
+            if(strcmp(color, "/me") == 0) 
+            {
+                SendClientMessage(i, 0xC2A2DAAA, text); 
+            } 
+            if (strcmp(color, "/do") == 0)
+            {
+                SendClientMessage(i, 0x90EE90AA, text); 
             }
-            
         }
     }
 	
