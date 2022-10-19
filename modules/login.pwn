@@ -8,7 +8,7 @@ public OnPlayerConnect(playerid)
 	//new query[128];
 	new pname[MAX_PLAYER_NAME], msg[128];	
 
-    SetSpawnInfo( playerid, 0, 1, 1730.2715,-1862.2861,13.5765,301.5053, 26, 36, 28, 150, 0, 0 );
+    
 	GetPlayerName(playerid, pname, sizeof(pname));
 
 	format(msg, sizeof(msg), "Hola %s, te damos la bienvenida a la version %s", pname, ver);
