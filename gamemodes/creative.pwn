@@ -50,8 +50,8 @@ public OnGameModeInit() {
 	SendRconCommand("language ES");
 	ConnectMySQL(); // called in './modules/login.pwn'
 	AddStaticVehicleEx (411, 1774.4281,-1860.3768,13.2201,269.7705, -1, -1, 15); // infernus at start
-	AddStaticVehicleEx (470, 1791.9729,-1860.7401,13.2197,269.3767, -1, -1, 15); // infernus at start
-    AddStaticVehicleEx (510, 1791.9729,-1860.7401,20.2197,269.3767, -1, -1, 15); // infernus at start
+	AddStaticVehicleEx (470, 1791.9729,-1860.7401,13.2197,269.3767, -1, -1, 15); // patriot at start
+    AddStaticVehicleEx (510, 1791.9729,-1860.7401,20.2197,269.3767, -1, -1, 15); // bike at start
 }
 
 public OnPlayerStateChange(playerid, newstate, oldstate)
@@ -92,5 +92,6 @@ YCMD:do(playerid, params[], help)
     }
     return 1;
 }
+
 
 
