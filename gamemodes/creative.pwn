@@ -18,17 +18,12 @@ new ver[24] = "BETA 0.0.1"; /* Versión */
 //Custom libraries
 
 // Modules
-
+#include <../modules/accounts/accounts.pwn>
 #include <../modules/login.pwn>
-#include <../modules/factions/main.pwn>
+#include <../modules/general/commands.pwn> 
+#include <../modules/factions/factions.pwn>
 
 
-enum E_PLAYER
-{
-	Id,
-	Name[MAX_PLAYER_NAME]
-};
-new Players[MAX_PLAYERS][E_PLAYER];
 #if !defined isnull
     #define isnull(%1) ((!(%1[0])) || (((%1[0]) == '\1') && (!(%1[1]))))
 #endif
@@ -67,31 +62,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
     return 1;
 }
 
-YCMD:me(playerid, params[], help)
-{
-	if(isnull(params)) {
-        SendClientMessage(playerid, 0xFFFFFFFF, "[!] USO -> /me accion.");
-    } else {
-        new msg[128], name[24];
-        GetPlayerName(playerid, name, sizeof(name));
-        format(msg, sizeof(msg), "%s %s", name, params);
-        SendClientMessageInRange(playerid, msg, "/me", 30.0);
-    }
-    return 1;
-}
 
-YCMD:do(playerid, params[], help)
-{
-	if(isnull(params)) {
-        SendClientMessage(playerid, 0xFFFFFFFF, "[!] USO -> /do entorno.");
-    } else {
-        new msg[128], name[24];
-        GetPlayerName(playerid, name, sizeof(name));
-        format(msg, sizeof(msg), "[Entorno de %s] %s", name, params);
-        SendClientMessageInRange(playerid, msg, "/do", 30.0);
-    }
-    return 1;
-}
 
 
 
